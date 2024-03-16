@@ -12,24 +12,31 @@ namespace ProjektLAB3
 {
     public partial class Form2 : Form
     {
-        private Form1 form2;
-        public Form2(Form1 form2)
+        public string FirstName { get; private set; }
+        public string LastName { get; private set; }
+        public int Age { get; private set; }
+        public string Position { get; private set; }
+
+        public Form2()
         {
             InitializeComponent();
-            this.form2 = form2;
         }
 
-        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-          
-            this.Close();
+
+            FirstName = firstNameTextBox.Text;
+            LastName = lastNameTextBox.Text;
+            Age = int.Parse(ageTextBox.Text);
+            Position = positionComboBox.SelectedItem.ToString();
+            DialogResult = DialogResult.OK;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult = DialogResult.Cancel;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

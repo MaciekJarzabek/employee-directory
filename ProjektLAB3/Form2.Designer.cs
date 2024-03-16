@@ -32,65 +32,67 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            comboBox1 = new ComboBox();
+            positionComboBox = new ComboBox();
             button1 = new Button();
             button2 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            firstNameTextBox = new TextBox();
+            lastNameTextBox = new TextBox();
+            ageTextBox = new TextBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(308, 73);
+            label1.Location = new Point(352, 97);
             label1.Name = "label1";
-            label1.Size = new Size(30, 15);
+            label1.Size = new Size(38, 20);
             label1.TabIndex = 0;
             label1.Text = "Imię";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(308, 112);
+            label2.Location = new Point(352, 149);
             label2.Name = "label2";
-            label2.Size = new Size(57, 15);
+            label2.Size = new Size(72, 20);
             label2.TabIndex = 1;
             label2.Text = "Nazwisko";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(308, 163);
+            label3.Location = new Point(352, 217);
             label3.Name = "label3";
-            label3.Size = new Size(33, 15);
+            label3.Size = new Size(42, 20);
             label3.TabIndex = 2;
             label3.Text = "Wiek";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(308, 218);
+            label4.Location = new Point(352, 291);
             label4.Name = "label4";
-            label4.Size = new Size(67, 15);
+            label4.Size = new Size(84, 20);
             label4.TabIndex = 3;
             label4.Text = "Stanowisko";
             // 
-            // comboBox1
+            // positionComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Stażysta", "Pracownik", "Kierownik" });
-            comboBox1.Location = new Point(151, 215);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 4;
-            comboBox1.TextChanged += comboBox1_TextChanged;
+            positionComboBox.FormattingEnabled = true;
+            positionComboBox.Items.AddRange(new object[] { "Stażysta", "Pracownik", "Kierownik" });
+            positionComboBox.Location = new Point(173, 287);
+            positionComboBox.Margin = new Padding(3, 4, 3, 4);
+            positionComboBox.Name = "positionComboBox";
+            positionComboBox.Size = new Size(138, 28);
+            positionComboBox.TabIndex = 4;
+            positionComboBox.TextChanged += comboBox1_TextChanged;
             // 
             // button1
             // 
-            button1.Location = new Point(151, 301);
+            button1.Location = new Point(173, 401);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(86, 31);
             button1.TabIndex = 5;
             button1.Text = "Zatwierdź";
             button1.UseVisualStyleBackColor = true;
@@ -98,53 +100,58 @@
             // 
             // button2
             // 
-            button2.Location = new Point(308, 302);
+            button2.Location = new Point(352, 403);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(86, 31);
             button2.TabIndex = 6;
             button2.Text = "Anuluj";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // textBox1
+            // firstNameTextBox
             // 
-            textBox1.Location = new Point(151, 70);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(121, 23);
-            textBox1.TabIndex = 7;
-            textBox1.TextChanged += textBox1_TextChanged;
+            firstNameTextBox.Location = new Point(173, 93);
+            firstNameTextBox.Margin = new Padding(3, 4, 3, 4);
+            firstNameTextBox.Name = "firstNameTextBox";
+            firstNameTextBox.Size = new Size(138, 27);
+            firstNameTextBox.TabIndex = 7;
+            firstNameTextBox.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // lastNameTextBox
             // 
-            textBox2.Location = new Point(151, 109);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(121, 23);
-            textBox2.TabIndex = 8;
-            textBox2.TextChanged += textBox2_TextChanged;
+            lastNameTextBox.Location = new Point(173, 145);
+            lastNameTextBox.Margin = new Padding(3, 4, 3, 4);
+            lastNameTextBox.Name = "lastNameTextBox";
+            lastNameTextBox.Size = new Size(138, 27);
+            lastNameTextBox.TabIndex = 8;
+            lastNameTextBox.TextChanged += textBox2_TextChanged;
             // 
-            // textBox3
+            // ageTextBox
             // 
-            textBox3.Location = new Point(151, 155);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(121, 23);
-            textBox3.TabIndex = 9;
-            textBox3.TextChanged += textBox3_TextChanged;
+            ageTextBox.Location = new Point(173, 207);
+            ageTextBox.Margin = new Padding(3, 4, 3, 4);
+            ageTextBox.Name = "ageTextBox";
+            ageTextBox.Size = new Size(138, 27);
+            ageTextBox.TabIndex = 9;
+            ageTextBox.TextChanged += textBox3_TextChanged;
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(514, 387);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            ClientSize = new Size(587, 516);
+            Controls.Add(ageTextBox);
+            Controls.Add(lastNameTextBox);
+            Controls.Add(firstNameTextBox);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(comboBox1);
+            Controls.Add(positionComboBox);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form2";
             Text = "Form2";
             ResumeLayout(false);
@@ -157,11 +164,11 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        public ComboBox comboBox1;
+        private ComboBox positionComboBox;
         private Button button1;
         private Button button2;
-        public TextBox textBox1;
-        public TextBox textBox2;
-        public TextBox textBox3;
+        private TextBox firstNameTextBox;
+        private TextBox lastNameTextBox;
+        private TextBox ageTextBox;
     }
 }
