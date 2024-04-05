@@ -1,9 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Windows.Forms;
+using System.Xml.Serialization;
+
 namespace ProjektLAB3
 {
+
     public partial class Form1 : Form
     {
         private Random _random = new Random();
         private string _csvFilePath = "employees.csv";
+        private string _xmlFilePath = "OsobaData.xml";
+
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +34,6 @@ namespace ProjektLAB3
             }
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
             var form2 = new Form2();
@@ -36,8 +44,7 @@ namespace ProjektLAB3
             }
         }
 
-        public DataGridViewRowCollection
-            GetDataGrindViewRows()
+        public DataGridViewRowCollection GetDataGrindViewRows()
         {
             return dataGridView1.Rows;
         }
@@ -73,6 +80,49 @@ namespace ProjektLAB3
             {
                 var parts = line.Split(',');
                 dataGridView1.Rows.Add(parts);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            List<Osoba> osoby = new List<Osoba>();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    Osoba osoba = new Osoba()
+                    {
+                        Imie = row.Cells["Imiê"].Value.ToString(),
+                        Nazwisko = row.Cells["Nazwisko"].Value.ToString(),
+                        Wiek = int.Parse(row.Cells["Wiek"].Value.ToString()),
+                        Stanowisko = row.Cells["Stanowisko"].Value.ToString(),
+                        ID = int.Parse(row.Cells["ID"].Value.ToString())
+                    };
+
+                    osoby.Add(osoba);
+                }
+            }
+
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Osoba>));
+
+            using (Stream stream = new FileStream(_xmlFilePath, FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                serializer.Serialize(stream, osoby);
+            }
+
+            MessageBox.Show("Dane zosta³y zserializowane do pliku OsobaData.xml");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(_xmlFilePath))
+            {
+                System.Diagnostics.Process.Start("notepad.exe", _xmlFilePath);
+            }
+            else
+            {
+                MessageBox.Show("Plik OsobaData.xml nie istnieje.");
             }
         }
     }

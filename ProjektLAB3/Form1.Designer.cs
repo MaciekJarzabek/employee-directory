@@ -38,6 +38,8 @@
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
+            button5 = new Button();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -65,7 +67,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(154, 445);
+            button3.Location = new Point(76, 445);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
             button3.Size = new Size(146, 31);
@@ -76,7 +78,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(402, 445);
+            button4.Location = new Point(255, 445);
             button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
             button4.Size = new Size(146, 31);
@@ -131,11 +133,33 @@
             Column5.Name = "Column5";
             Column5.Width = 125;
             // 
+            // button5
+            // 
+            button5.Location = new Point(429, 445);
+            button5.Name = "button5";
+            button5.Size = new Size(146, 31);
+            button5.TabIndex = 5;
+            button5.Text = "Serializuj do .XML";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(607, 445);
+            button6.Name = "button6";
+            button6.Size = new Size(146, 31);
+            button6.TabIndex = 6;
+            button6.Text = "Odczyt z .XML";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(895, 540);
+            Controls.Add(button6);
+            Controls.Add(button5);
             Controls.Add(dataGridView1);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -160,5 +184,7 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
+        private Button button5;
+        private Button button6;
     }
 }
